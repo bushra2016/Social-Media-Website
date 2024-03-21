@@ -23,11 +23,9 @@ const session = require("express-session");
 
 
  //Routes
- const loginRoute =require('./routes/loginRoutes');
- const registerRoute =require('./routes/registerRoutes');
+ const user_route =require('./routes/user-route');
+ app.use("/", user_route);
  
- app.use("/login", loginRoute);
- app.use("/register", registerRoute);
 
  app.get("/",middleware.requireLogin,(req ,res ,next) => {
     var payload = {
