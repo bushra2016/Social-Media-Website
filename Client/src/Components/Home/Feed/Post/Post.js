@@ -2,9 +2,13 @@ import { Avatar } from "@mui/material";
 import React from "react";
 import "./Post.css";
 
-import { MoreHoriz, ChatBubbleOutline, Repeat, FavoriteBorderOutlined, PublishOutlined} from "@mui/icons-material";
+import { MoreHoriz, ChatBubbleOutline, FavoriteBorderOutlined} from "@mui/icons-material";
 
-const Post = () => {
+const Post = ({ username, handle, content, imageUrl }) => {
+    const handleClick = () => {
+        console.log('Notification sent!');
+      };
+    
     return (
     <div className="post">
         <Avatar 
@@ -13,24 +17,21 @@ const Post = () => {
         <div className="post__content">
             <div className="post__header">
                 <div className="post__titles">
-                    <h3>John Doe</h3>
-                    <h4>@johndoe</h4>
+                    <h3>{username}</h3>
+                    <h4>@{handle}</h4>
                 </div>
                 <MoreHoriz className="post__options" />
             </div>
             <div className="post__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-                ipsem sed fugit non balanditiis quam earum doloremque quibusdam totam
-                maxime!
+                {content}
             </div>
             <div className="post__media">
-                <img src="https://www.austrianpost.de/images/10-Mobil-Startseite-768x576px.jpg" alt="" />
+                <img src={imageUrl} alt="" />
             </div>
+            
             <div className="post__footer">
-                <ChatBubbleOutline fontSize="small" />
-                <Repeat fontSize="small" />
-                <FavoriteBorderOutlined fontSize="small" />
-                <PublishOutlined fontSize="small" />
+                <ChatBubbleOutline onClick={handleClick} className="post-btn" fontSize="small" />
+                <FavoriteBorderOutlined onClick={handleClick} className="post-btn" fontSize="small" />
             </div>
         </div>
     </div>
