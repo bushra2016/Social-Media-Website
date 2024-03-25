@@ -10,9 +10,11 @@ const cors = require('cors');
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'Client', 'src')));
+/*
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'Client', 'src', 'index.js'));
 });
+*/
 app.use(bodyParser.urlencoded({extended:false}));
 const corsOption = {
    origin: "*",
