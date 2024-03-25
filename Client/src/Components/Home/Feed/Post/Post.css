@@ -7,7 +7,12 @@
 
 .post:hover {
     cursor: pointer;
+    background-color: rgb(247, 187, 141);
+}
+.post-btn:hover{
+    cursor: pointer;
     background-color: rgb(255, 111, 1);
+
 }
 
 .post__avatar {
@@ -51,6 +56,13 @@
 }
 
 .post__options {
+    cursor: pointer;
+    margin-left: 320px;
+}
+.created_at{
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--grey-2);
     cursor: pointer;
 }
 
