@@ -64,6 +64,53 @@ const send_post = (async(req ,res ,next) => {
     });
 });
 
+//save unsave
+exports.savePost=async(req,res)=>{
+    const saved={
+        savedBy:req.user._id,
+        profilePic:req.user.pic,
+        postId:req.body.postId
+    }
+    await Post.findByIdAndUpdate(req.body.postId,{
+        $push:{saved:saved}
+    },{
+        new:true
+    })
+    .populate("postedBy","_id name pic")
+    .populate("comments.postedBy","_id name pic")
+    .exec((err,result)=>{
+        if(err){
+            return res.status(400).json({msg:"This post dose dont exist",error:err})
+        }
+        else{
+            res.json(result)
+        }
+    })
+}
+
+exports.unSavePost=async(req,res)=>{
+    await Post.findById(req.body.postId,{
+        $pull:{
+             saved:{
+                savedBy:req.user._id,
+                postId:req.body.postId,
+                _id:req.body.savedId
+            }
+        }
+    },{
+        new:true
+    })
+    .exec((err,result)=>{
+        if(err){
+            return res.status(400).json({msg:"This post dose dont exist",error:err})
+        }
+        else{
+            res.json(result)
+        }
+    })
+}
+
+
 module.exports = {
     send_post,
     get_all_posts,
