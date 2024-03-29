@@ -64,6 +64,62 @@ const send_post = (async(req ,res ,next) => {
     });
 });
 
+exports.addComment=async(req,res)=>{
+    const comment={
+        text:req.body.text,
+        postedBy:req.user._id,
+    }
+    await Post.findByIdAndUpadate(req.body.postId,{
+        $push:{comments:comment}
+    },{new:true})
+    .populate("postedBy","_id name pic")
+    .populate("comments.postedBy","_id name pic")
+    .exec((err,result)=>{
+        if(err){
+            return res.status(422).json({msg:err})
+        }
+        else{
+            res.json(result)
+        }
+    })
+}
+
+exports.getAllComments=async(req,res)=>{
+
+    await Post.find({})
+    .populate("comments","_id text postedBy")
+    .sort("-createdAt")
+    .then((posts)=>{
+        res.json({posts})
+    })
+    .catch(err=>{
+        return res.status(422).json({msg:err})
+    })
+}    
+
+exports.deleteComments=async(req,res)=>{
+    await Post.findByIdAndUpadate(req.body.postId,{
+        $pull:{
+            comments:{
+                text:req.body.commentText,
+                postedBy:req.body.commentPostedBy,
+                _id:req.body.commentId
+            }
+        }
+    },{new:true})
+    .populate("postedBy","_id name pic")
+    .populate("comments.postedBy","_id name pic")
+    .exec((err,result)=>{
+        if(err){
+            return res.status(422).json({msg:"This post dose not exists"})
+        }
+        else{
+            res.json(result)
+        }
+    })
+}
+
+
 module.exports = {
     send_post,
     get_all_posts,
