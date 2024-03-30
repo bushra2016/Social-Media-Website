@@ -1,0 +1,9 @@
+.widgets {
+    flex: 0.3;
+    height: 100vh;
+    /*background-color: var(--twitter-secondary);*/
+}
+
+.widgets__container {
+    width: 100%;
+}
