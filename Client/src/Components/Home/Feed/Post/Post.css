@@ -1,17 +1,17 @@
 .post {
     display: flex;
     padding: 1rem;
-    border-bottom: 1px solid var(--twitter-secondary);
+    border-bottom: 1px solid var(--trekkers-secondary);
     transition: background-color 0.2s;
 }
 
 .post:hover {
     cursor: pointer;
-    background-color: rgb(247, 187, 141);
+    background-color: var(--trekkers-secondary);
 }
 .post-btn:hover{
     cursor: pointer;
-    background-color: rgb(255, 111, 1);
+    background-color: var(--trekkers-primary-2);
 
 }
 
@@ -68,9 +68,6 @@
 
 .post__description {
     font-size: 0.9rem;
-}
-
-.post__media {
 }
 
 .post__media img {

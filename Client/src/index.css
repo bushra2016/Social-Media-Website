@@ -8,11 +8,11 @@ body {
   --white: white;
   --grey:#c5c5c5;
   --grey-2:#838383;
-  --twitter-primary: rgb(241, 136, 56);
-  --twitter-primary-2: rgb(241, 136, 56);
-  --twitter-secondary: #e6ecf0;
+  --trekkers-primary: rgb(241, 136, 56);
+  --trekkers-primary-2: rgb(214, 110, 30);
+  --trekkers-secondary: #e6ecf0;
 
-  background-color: rgb(202, 188, 237);
+  background-color: #ccc5c5;
 }
 
 code {
@@ -40,14 +40,14 @@ code {
 }
 
 .primary__button:hover{
-  background-color: var(--twitter-secondary);
+  background-color: var(--trekkers-secondary);
 }
 
 .secondary__button{
   color: var(--white);
-  background-color: var(--twitter-primary);
+  background-color: var(--trekkers-primary);
 }
 
 .secondary__button:hover{
-  background-color: var(--twitter-primary-2);
+  background-color: var(--trekkers-primary-2);
 }

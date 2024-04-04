@@ -14,7 +14,7 @@ import { Button } from "@mui/material";
 const Sidebar = () => {
     return (
         <div className="sidebar">
-            <img src="./TrekkersIcon.jpg" alt="" className="sidebar__twitterIcon" />
+            <img src="./TrekkersIcon.jpg" alt="" className="sidebar__trekkersIcon" />
             <SidebarOption active Icon={Home} text="Home" />
             <SidebarOption Icon={Search} text="Explore" />
             <SidebarOption Icon={NotificationsNone} text="Notifications" />

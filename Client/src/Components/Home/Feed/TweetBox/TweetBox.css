@@ -1,6 +1,6 @@
 .tweetbox{
     padding: 0.5rem 1rem;
-    border-bottom: 1px solid var(--twitter-secondary);
+    border-bottom: 1px solid var(--trekkers-secondary);
 }
 
 .tweetbox__form {
@@ -23,7 +23,7 @@
     border: none;
     height: 3rem;
     width: 100%;
-    border-bottom: 1px solid var(--twitter-secondary);
+    border-bottom: 1px solid var(--trekkers-secondary);
     margin-bottom: 1rem;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .tweetbox__icons{
-    color: var(--twitter-primary) !important;
+    color: var(--trekkers-primary) !important;
 }
 
 .tweetbox__icon{
@@ -41,7 +41,7 @@
 }
 
 .tweetbox__btn {
-    background-color: var(--twitter-primary) !important;
+    background-color: var(--trekkers-primary) !important;
     border-radius: 33px !important;
     color: var(--white) !important;
     font-size: 0.9rem !important;
@@ -50,5 +50,5 @@
 }
 
 .tweetbox__btn:hover {
-    background-color: var(--twitter-primary-2) !important;
+    background-color: var(--trekkers-primary-2) !important;
 }
