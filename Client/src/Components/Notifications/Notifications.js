@@ -1,6 +1,6 @@
 import React from "react";
 import "./Notifications.css";
-import Sidebar from "../Home/Sidebar/Sidebar";
+import Sidebar from "../Sidebar/Sidebar";
 import Widgets from "../Home/Widgets/Widgets";
 import NotificationItem from "./NotificationItem/NotificationItem";
 import NavNotifications from "./NavNotifications/NavNotifications";
