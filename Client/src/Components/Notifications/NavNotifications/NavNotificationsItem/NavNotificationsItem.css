@@ -1,0 +1,19 @@
+.container__navItem{
+    min-width:56px;
+    width: 283px;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container__navItem div span{
+    font-size: 15px;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    text-decoration: none solid rgb(217,217,217);
+    white-space: pre-wrap;
+    word-spacing: 0%;
+    font-weight: 700;
+    line-height: 20px;
+}

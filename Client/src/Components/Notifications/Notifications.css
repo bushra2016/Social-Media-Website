@@ -1,15 +1,11 @@
-.feed{
+.notifications{
+    display: flex;
+}
+
+.notifications__container{
     flex: 0.5;
     width: 100%;
     border-left: 1px solid var(--trekkers-secondary);
     border-right: 1px solid var(--trekkers-secondary);
     height: 100vh;
-}
-
-.feed__header {
-    padding: 0.5rem 1rem;
-}
-
-.feed__header h2{
-    font-size: 1.3rem;
 }
