@@ -1,0 +1,54 @@
+User Authentication:
+POST /api/auth/register
+POST /api/auth/login
+POST /api/auth/logout
+POST /api/auth/forgot-password
+
+External Authentication:
+POST /api/auth/login/google
+
+Token Management:
+POST /api/token/refresh
+GET /api/users/me
+
+User Profile:
+GET /api/users/{user_id}
+PUT /api/users/{user_id}
+DELETE /api/users/{user_id}
+
+Countries Management:
+Post /api/users/{user_id}/countries
+GET /api/users/{user_id}/countries (Get all countries for a specific user)
+PUT /api/users/{user_id}/countries/{country_id}
+DELETE /api/users/{user_id}/countries/{country_id}
+
+Posts Management:
+POST /api/users/{user_id}/countries/{country_id}/posts
+GET /api/users/{user_id}/countries/{country_id}/posts (Get country posts for a specific user)
+GET /api/users/{user_id}/countries/{country_id}/posts/{post_id}
+PUT /api/users/{user_id}/countries/{country_id}/posts/{post_id}
+DELETE /api/users/{user_id}/countries/{country_id}/posts/{post_id}
+
+Likes Management:
+POST /posts/{post_id}/like
+DELETE /posts/{post_id}/like
+
+Comments Management:
+POST /posts/{post_id}/comments
+GET /posts/{post_id}/comments/{comment_id}
+DELETE /posts/{post_id}/comments/{comment_id}
+
+Follow Management:
+POST /users/{user_id}/follow
+DELETE /users/{user_id}/follow
+GET /users/{user_id}/followers
+
+Save Posts Management:
+POST /posts/{post_id}/save
+DELETE /posts/{post_id}/save
+
+Search Users:
+GET /api/users/search (Search for users)
+
+Search Posts by Country:
+GET /api/countries/{country_id}/posts (Get all posts from a specific country)
