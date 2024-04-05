@@ -1,5 +1,6 @@
 const Country = require('../models/country-model');
 const User = require('../models/user-model');
+const Post = require('../models/post-model');
 const mongoose = require("mongoose");
 
 const add_country = (async(req ,res ,next) => {
@@ -65,6 +66,7 @@ const edit_country = (async(req ,res ,next) => {
 const delete_country = (async(req ,res ,next) => {
     try{
         const {userId, countryId} = req.params;
+        await Post.deleteMany({ postedBy: userId, country: countryId });
         await Country.deleteOne({ _id: countryId, postedBy: userId });
         res.status(200).json({ status: 'SUCCESS', message: 'Country deleted successfully' });
     }catch(error){

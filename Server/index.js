@@ -36,9 +36,8 @@ app.use("/", user_route);
 const country_route = require('./routes/countries-route');
 app.use("/api/users", country_route);
 
-//API Routes
-const post_api_route = require('./routes/api/posts');
-app.use("/", post_api_route);
+const post_route = require('./routes/post-route');
+app.use("/api/users/", post_route);
 
 app.get("/", middleware.requireLogin, (req ,res ,next) => {
    var payload = {
