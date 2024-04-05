@@ -26,7 +26,6 @@ Posts Management:
 POST /api/users/{user_id}/countries/{country_id}/posts
 GET /api/users/{user_id}/countries/{country_id}/posts (Get country posts for a specific user)
 GET /api/users/{user_id}/countries/{country_id}/posts/{post_id}
-PUT /api/users/{user_id}/countries/{country_id}/posts/{post_id}
 DELETE /api/users/{user_id}/countries/{country_id}/posts/{post_id}
 
 Likes Management:
