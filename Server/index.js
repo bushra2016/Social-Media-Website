@@ -33,6 +33,9 @@ app.use(session({
 const user_route =require('./routes/user-route');
 app.use("/", user_route);
 
+const country_route = require('./routes/countries-route');
+app.use("/api/users", country_route);
+
 //API Routes
 const post_api_route = require('./routes/api/posts');
 app.use("/", post_api_route);
