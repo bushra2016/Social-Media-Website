@@ -1,0 +1,116 @@
+.people{
+   margin-top: 100px;
+    align-items: center;
+    padding: 10px;
+    display:inline-flex;
+    border-radius: 10%;
+    
+}
+
+.people:hover{
+    background-color: #e6ecf0;
+}
+
+.peopleImg{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+ 
+
+}
+
+.peopleName{
+    font-weight: 500;
+    margin-right: auto;
+    
+    
+}
+.people button{
+
+    margin-left: 70px;
+    padding: 15px;
+    border-radius: 30%;
+    width: 150px;
+    background-color:  rgb(241, 136, 56);
+    cursor: pointer;
+    
+
+}
+.people button:hover {
+    background-color:#c5c5c5;
+  }
+
+
+/********/
+.container {
+    max-width: 600px;
+    padding: 20px;
+    background-color: --grey;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+    float:inline-start;
+    width: 75%; 
+    margin-right: 600;
+    margin: 50px auto 20px;
+    
+     
+}
+  
+  
+  .sidebar {
+    order: 1; 
+    width: 25%; 
+    float: left; 
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-form input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .search-form select {
+    padding: 12px 70px;
+    background-color: --twitter-primary;
+    color: #fff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  
+  
+  .search-result {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .search-result h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  
+  .search-result p {
+    margin: 0;
+  }
+  
