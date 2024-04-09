@@ -1,9 +1,7 @@
-
 .people{
     display:flex;
     
 }
-
 .countryName label{
   
         width: 90%; 
@@ -17,7 +15,6 @@
         display:block;
         margin-left: 5%;
         
-       
 }
 .title label{
     width: 90%; 
@@ -45,7 +42,4 @@
     width: 80%; 
     height: 300px; 
     margin-top: 30px;
-}
-.Select{
-    background-color: var(--trekkers-primary) ;
 }

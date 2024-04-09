@@ -26,16 +26,21 @@
  }
 
  .people button{
-     margin-left: 70px;
-     padding: 15px;
-     border-radius: 30%;
-     width: 150px;
-     background-color:  rgb(241, 136, 56);
-     cursor: pointer;
+  background-color: var(--trekkers-primary) ;
+  color: var(--white) !important;
+  text-transform: capitalize !important;
+  border-radius: 33px ;
+  width: 150px;
+  padding: 15px;
+  font-size: 1.1rem !important;
+  border: none !important;
+  margin-left: 70px;
+  cursor: pointer;
  }
 
  .people button:hover {
-     background-color:#c5c5c5;
+  background-color: var(--trekkers-primary-2) !important;
+
    }
  
  

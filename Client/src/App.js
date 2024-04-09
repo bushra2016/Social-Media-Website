@@ -7,7 +7,8 @@ import  Notifications  from "./Components/Notifications/Notifications";
 import Messenger from "./Components/messenger/Messenger";
 import SearchBar from "./Components/Search/SearchBar";
 import PeopleSearch from "./Components/peopleSearch/PeopleSearch";
-import PostsCountrySearch from "./Components/postsCountrySearch/PostsCountrySearch";
+import CountrySearch from "./Components/CountrySearch/CountrySearch";
+import PostSearch from "./Components/PostSearch/PostSearch";
 
 
 
@@ -22,7 +23,8 @@ function App() {
           <Route path="/Notifications" element={<Notifications />}></Route>
           <Route path="/messenger" element={<Messenger />}></Route>
           <Route path="/Search" element={<SearchBar />}></Route>
-          <Route path="/postsCountrySearch" element={<PostsCountrySearch />}></Route>
+          <Route path="/CountrySearch" element={<CountrySearch />}></Route>
+          <Route path="/PostSearch" element={<PostSearch />}></Route>
           <Route path="/peopleSearch" element={<PeopleSearch />}></Route>
 
         </Routes>
