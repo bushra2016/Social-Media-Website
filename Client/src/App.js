@@ -5,6 +5,7 @@ import Home from "./Components/Home/Home";
 import Register from "./Components/login-system/register";
 import  Notifications  from "./Components/Notifications/Notifications";
 import PersonalProfile from "./Components/PersonalProfile/PersonalProfile"
+import OtherProfile from "./Components/OtherProfile/OtherProfile"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/home" element={<Home />}></Route>
           <Route path="/Notifications" element={<Notifications />}></Route>
           <Route path="/PersonalProfile" element={<PersonalProfile />}></Route>
+          <Route path="/OtherProfile" element={<OtherProfile />}></Route>
         </Routes>
       </div>
     </BrowserRouter>
