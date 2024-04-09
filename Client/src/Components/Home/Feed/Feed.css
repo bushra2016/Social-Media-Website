@@ -3,7 +3,6 @@
     width: 100%;
     border-left: 1px solid var(--trekkers-secondary);
     border-right: 1px solid var(--trekkers-secondary);
-    height: 100vh;
 }
 
 .feed__header {
@@ -12,4 +11,8 @@
 
 .feed__header h2{
     font-size: 1.3rem;
+}
+
+.CountryPost__container{
+    padding: 20px;
 }
