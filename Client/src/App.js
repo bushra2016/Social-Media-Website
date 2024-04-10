@@ -16,7 +16,7 @@ function App() {
           <Route path="/register" element={<Register />}></Route>
           <Route path="/home" element={<Home />}></Route>
           <Route path="/Notifications" element={<Notifications />}></Route>
-          <Route path="/PersonalProfile" element={<PersonalProfile />}></Route>
+          <Route path="/profile/:userId" element={<PersonalProfile />}></Route>
           <Route path="/OtherProfile" element={<OtherProfile />}></Route>
         </Routes>
       </div>
