@@ -4,26 +4,26 @@ const router = express.Router();
 const cors = require('cors');
 const bodyParser = require("body-parser");
 const users_controller = require('../controllers/users-controller');
+const verfiy_token = require('../middlewares/verfiy-token');
 
 app.use(bodyParser.urlencoded({extended:false}));
 
 app.use(cors());
 
-router.route('/login')
-        .post(users_controller.login)
-        .get(cors())
-
 router.route('/register')
         .post(users_controller.register)
-        .get((req, res)=>{
-            res.status(200).render("register");
-        })
+        
+router.route('/login')
+        .post(users_controller.login)
+
+router.route('/refresh_token')
+        .post(users_controller.refresh_token)
 
 router.route('/logout')
         .get(users_controller.logout);
  
 router.route('/api/users/:userId')
-        .get(users_controller.get_profile)
+        .get(verfiy_token, users_controller.get_profile)
         .put(users_controller.edit_profile)
         .delete(users_controller.delete_profile)
         
