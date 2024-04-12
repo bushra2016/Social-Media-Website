@@ -1,0 +1,51 @@
+
+.people{
+    display:flex;
+    
+}
+
+.countryName label{
+  
+        width: 90%; 
+        height: 30px; 
+        font-size: 16px; 
+        padding: 5px; 
+        margin-top: 50px;
+        text-align: center;
+        background-color: rgb(232, 188, 155);
+        border-color: rgb(249, 99, 45);
+        display:block;
+        margin-left: 5%;
+        
+       
+}
+.title label{
+    width: 90%; 
+    height: 30px; 
+    font-size: 16px; 
+    padding: 4.5px; 
+    margin-top: 20px;
+    text-align: center;
+    background-color: rgb(53, 123, 202);
+    display:block;
+    margin-left: 5%;
+    
+
+}
+.gragh p{
+    text-align: center;
+  
+    margin: 20px;
+    text-justify: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.countryImg{
+    width: 80%; 
+    height: 300px; 
+    margin-top: 30px;
+}
+.Select{
+    background-color: var(--trekkers-primary) ;
+}

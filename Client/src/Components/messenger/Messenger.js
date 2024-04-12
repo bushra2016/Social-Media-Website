@@ -1,7 +1,7 @@
 
 import Conversations from "./conversations/Conversation";
 import Message from "./message/Message";
-import Sidebar from "../Home/Sidebar/Sidebar";
+import Sidebar from "../Sidebar/Sidebar";
 import "./messenger.css";
 
 const Messenger = () => {
