@@ -7,7 +7,9 @@ const database =require("./models/conn-db");
 const session = require("express-session");
 const path = require('path');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'Client', 'src')));
 /*

@@ -1,18 +1,14 @@
-.feed{
+.PersonalProfile{
+    display: flex;
+}
+
+.PersonalProfile__container{
     flex: 0.5;
     width: 100%;
     border-left: 1px solid var(--trekkers-secondary);
     border-right: 1px solid var(--trekkers-secondary);
 }
 
-.feed__header {
-    padding: 0.5rem 1rem;
-}
-
-.feed__header h2{
-    font-size: 1.3rem;
-}
-
-.CountryPost__container{
+.PersonalProfile__country__container{
     padding: 20px;
 }
