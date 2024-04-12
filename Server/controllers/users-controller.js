@@ -3,136 +3,116 @@ const User = require('../models/user-model');
 const Country = require('../models/country-model');
 const Post = require('../models/post-model');
 const mongoose = require("mongoose");
-
-const login = (async(req ,res ,next) => {
-    var payload = req.body;
-    console.log(payload);
-    if(req.body.logUsername && req.body.logPassword){
-        var usernameOrEmail = await User.findOne({ 
-            $or:[
-                { username: req.body.logUsername},
-                { email:  req.body.logUsername}
-            ]
-         })
- 
-         if(usernameOrEmail != null){
-            var result = await bcrypt.compare(req.body.logPassword, usernameOrEmail.password);
-            if(result === true){
-                req.session.username = usernameOrEmail;
-                req.session.activeUsers = req.session.activeUsers || []; 
-                req.session.activeUsers.push(usernameOrEmail);
-                //return res.status(200).json({ message: 'Login successful', user: user });
-                return res.status(200).json('Login successful');
-            } 
-         }
-         
-         payload.errorMessage ="Login credentials incorrect.";
-        // return res.status(401).json({ error: 'Login credentials incorrect' });
-         return res.status(401).json('error');
-    }
-    
-    payload.errorMessage ="Make sure each field has a valid value.";
-    //res.status(400).json({ error: 'Make sure each field has a valid value' });
-    res.status(400).json('error');
-});
-
-
-/*
-const login = async (req, res, next) => {
-   var payload = req.body;
-   if (req.body.logUsername && req.body.logPassword) {
-       try {
-           var user = await User.findOne({
-               $or: [
-                   { username: req.body.logUsername },
-                   { email: req.body.logUsername }
-               ]
-           });
-           if (user != null) {
-               var result = await bcrypt.compare(req.body.logPassword, user.password);
-               if (result === true) {
-                   req.session.user = user;
-                   return res.status(200).json('Login successful');
-               }
-           }
-           return res.status(401).json('Login credentials incorrect');
-       } catch (error) {
-           console.log(error);
-           return res.status(500).json('Something went wrong');
-       }
-   }
-   return res.status(400).json('Make sure each field has a valid value');
-};
-*/
+const jwt = require('jsonwebtoken');
+const {create_access_token, create_refresh_token} = require('../middlewares/genrate-token');
 
 const register = (async (req ,res ,next) => {
-   console.log(req.body);
-    var firstName = req.body.firstName.trim();
-    var lastName = req.body.lastName.trim();
-    var username = req.body.username.trim();
-    var email = req.body.email.trim();
-    var password = req.body.password;
- 
-    var payload= req.body;
- 
+    const {firstName, lastName, username, email, password} = req.body;
     if(firstName && lastName && username && email && password){
-       var user = await User.findOne({ 
-          $or:[
-              { username: username},
-              { email: email}
-          ]
-       })
-       /*.catch((error) => {
-          console.log(error);
-          payload.errorMessage ="Something went wrong.";
-          res.status(200).render("register",payload);
- 
-       });*/ 
-       if (user == null){
-          //user not found
-          var data = req.body;
-          data.password = await bcrypt.hash(password , 10);
- 
-          User.create(data)
-          .then((user) => {
-             //req.session.user = user;
-             return res.status(200).json('Register successful');
-          });
-       }
-       else{
-          //user found
-          if (email == user.email){
-              payload.errorMessage ="email already in use";
-          }
-          else {
-             payload.errorMessage ="Username already in use";
-          }
-          //res.status(200).render("register",payload);
-          res.status(200).json(payload.errorMessage);
-       } 
-    }
-    else{
-       payload.errorMessage ="make sure each field has a valid value.";
-       //res.status(200).render("register",payload);
-       res.status(200).json(payload);
+        const oldUser = await User.findOne({ 
+           $or:[
+               {username: username},
+               {email: email}
+           ]
+        });
+        if(oldUser){
+            const error = 'user already exists';
+            return next(error);
+        }
+        //user not found
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const new_user = new User({
+            firstName: firstName,
+            lastName: lastName,
+            username: username,
+            email: email,
+            password: hashedPassword,
+        });
+        await new_user.save();
+        res.status(201).json({status: 'Register Successful', data: {user: new_user}}); 
+
+    }else{
+        const error_message ="make sure each field has a valid value.";
+        res.status(200).json({error_message: error_message});
     }   
+ });
+ 
+const login = (async(req ,res ,next) => {
+    const {logUsername, logPassword} = req.body;
+    if(!logUsername || !logPassword){
+        const error = 'Email and Password are required';
+        return next(error);
+    }
+    const user = await User.findOne({ 
+        $or:[
+            { username: logUsername},
+            { email:  logUsername}
+        ]
+    });
+    if(!user){
+        const error = 'This user does not exists';
+        return next(error);
+    }
+    const matched_password = await bcrypt.compare(logPassword, user.password);
+    if(!matched_password) {
+        return res.status(400).json({msg: "Password is Incorrect"});
+    }
+    const payload = {
+        id: user._id,
+        email: user.email,
+        username: user.username
+    };
+    const access_token = create_access_token(payload);
+    const refresh_token = create_refresh_token(payload);
+    res.cookie('refreshtoken', refresh_token, {
+        httpOnly:true,
+        path:'/refresh_token',
+        maxAge : 30*24*60*60*1000 //30
+    });
+    return res.status(200).json({ status: 'Login successful', data: {access_token: access_token, user: user}});
 });
 
+const refresh_token = (async(req, res)=>{
+    try {
+        const refresh_token = req.cookies.refreshtoken;
+        if(!refresh_token){
+            return res.status(400).json({msg:"Please login now"})
+        }
+        jwt.verify(refresh_token, process.env.REFRESH_TOKEN_SECRET, async(err, result)=>{
+            if(err){
+                return res.status(400).json({msg:"Please login now"});
+            }
+            const user = await User.findById(result.id);
+            if (!user) {
+                console.log("user")
+                return res.status(400).json({ msg: "This user does not exist" });
+            }
+            const populatedUser = {
+                _id: user._id,
+                firstName: user.firstName,
+                lastName: user.lastName,
+                username: user.username,
+                profilePic: user.profilePic,
+                followers: user.followers,
+                following: user.following
+            };
+            const access_token = create_access_token({id:result.id})
+            res.json({access_token: access_token, user: populatedUser});
+        });
+    
+    } catch (error) {
+        res.status(500).json({msg:"Something went wrong"})
+    }
+});
 
 const logout = (async(req, res, next)=>{
-    console.log("req session: ",req.body)
-    req.session.activeUsers = req.session.activeUsers || [];
-    const index = req.session.activeUsers.indexOf(req.session.username);
-    if (index !== -1) {
-        req.session.activeUsers.splice(index, 1);
+    try {
+        res.clearCookie('refreshtoken', { path: '/refresh_token' })
+        return res.json({ msg: "Logout Successfully" })
+
+    } catch (error) {
+        return res.status(500).json({ msg: error.message })
     }
-    req.session.destroy(err => {
-        if(err){
-            console.error('Error destroying session:', err);
-            return res.status(500).send('Internal Server Error');
-        }
-        res.redirect('/login');
-    });
 });
 
 const get_profile = (async(req, res, next) => {
@@ -303,6 +283,7 @@ const get_followers = (async(req, res, next) => {
 module.exports = {
     register,
     login,
+    refresh_token,
     logout,
     get_profile,
     edit_profile,
