@@ -1,6 +1,7 @@
 
 import "./searchBar.css";
 import Sidebar from "../Sidebar/Sidebar";
+import Widgets from "../Home/Widgets/Widgets";
 
 
 const SearchPage = () => {
@@ -20,7 +21,11 @@ const SearchPage = () => {
                     </select>
                 </div>
             </div>
+            
+            <Widgets/>
+        
         </div>
+        
     );
 };
 
