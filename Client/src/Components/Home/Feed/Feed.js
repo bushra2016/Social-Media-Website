@@ -3,6 +3,7 @@ import "./Feed.css"
 import TweetBox from "./TweetBox/TweetBox";
 import Post from "./Post/Post";
 import axios from "axios";
+import CountryPost from "./CountryPost/CountryPost";
 
 const Feed = () => {
     const [posts, setPosts] = useState([]);
@@ -26,6 +27,12 @@ const Feed = () => {
             <h2>Home</h2>
         </header>
         <TweetBox />
+        <div className="CountryPost__container">
+            <CountryPost />
+            <CountryPost />
+        </div>
+        
+        <div className="CountryPost__container">
         {posts.map((post) => (
             <Post
                 key={post._id} // Assuming each post has a unique ID
@@ -34,7 +41,7 @@ const Feed = () => {
                 content={post.content}
                 imageUrl={post.imageUrl}
             />
-        ))}
+        ))}</div>
     </div>
     );
 };

@@ -45,7 +45,10 @@ const UserSchema = new Schema({
     bio: {
         type: String,
         maxlength: 150,
-    }
+    },
+    token: {
+        type: String,
+    },
 
 },{ timestamps:true});
 

@@ -11,7 +11,6 @@ import CountrySearch from "./Components/CountrySearch/CountrySearch";
 import PostSearch from "./Components/PostSearch/PostSearch";
 
 
-
 function App() {
   return (
     <BrowserRouter>
@@ -26,7 +25,6 @@ function App() {
           <Route path="/CountrySearch" element={<CountrySearch />}></Route>
           <Route path="/PostSearch" element={<PostSearch />}></Route>
           <Route path="/peopleSearch" element={<PeopleSearch />}></Route>
-
         </Routes>
       </div>
     </BrowserRouter>
