@@ -1,6 +1,7 @@
 .sidebar{
     flex: 0.2;
     padding: 1rem 2rem;
+    
 }
 
 .sidebar__trekkersIcon{
@@ -22,4 +23,8 @@
 
 .sidebar__tweet-btn:hover{
     background-color: var(--trekkers-primary-2) !important;
+}
+.sidebar__link{
+    text-decoration: none;
+    color: black;
 }
