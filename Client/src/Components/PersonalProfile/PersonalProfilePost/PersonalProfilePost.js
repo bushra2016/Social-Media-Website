@@ -1,16 +1,24 @@
 import React from "react";
 import "./PersonalProfilePost.css";
+import { useNavigate } from "react-router-dom";
 
 import { MoreHoriz } from "@mui/icons-material";
 
 const PersonalProfilePost = (country) => {
-    console.log("country",country?.country?.country)
+    const userId = country?.country?.postedBy;
+    const countryId = country?.country?._id;
+    const countryName = country?.country?.country;
+    const navigate = useNavigate();  
+    const handlePostClick = () => {
+        navigate(`/profile/${userId}/country/${countryId}`);
+    };
+
     return (
-    <div className="PersonalProfilePost">
+    <div className="PersonalProfilePost" onClick={handlePostClick}>
         <div className="post__content">
             <div className="post__header">
                 <div className="post__titles">
-                    <h3>{country?.country?.country}</h3>
+                    <h3>{countryName}</h3>
                 </div>
                 <MoreHoriz className="post__options" />
             </div>

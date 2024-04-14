@@ -11,6 +11,7 @@ import CountrySearch from "./Components/CountrySearch/CountrySearch";
 import PostSearch from "./Components/PostSearch/PostSearch";
 import PersonalProfile from './Components/PersonalProfile/PersonalProfile';
 import OtherProfile from './Components/OtherProfile/OtherProfile';
+import PostCountry from './Components/Post-Country/Post-Country';
 
 
 function App() {
@@ -27,8 +28,9 @@ function App() {
           <Route path="/CountrySearch" element={<CountrySearch />}></Route>
           <Route path="/PostSearch" element={<PostSearch />}></Route>
           <Route path="/peopleSearch" element={<PeopleSearch />}></Route>
-          <Route path="/profile/:userId" element={<PersonalProfile />}></Route>
-          <Route path="/OtherProfile" element={<OtherProfile />}></Route>
+          <Route path="/profile" element={<PersonalProfile />}></Route>
+          <Route path="/profile/:userId" element={<OtherProfile />}></Route>
+          <Route path="/profile/:userId/country/:countryId" element={<PostCountry />}></Route>
         </Routes>
       </div>
     </BrowserRouter>

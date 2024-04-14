@@ -22,7 +22,10 @@ const Homepage = () => {
           logUsername: logUsername,
           logPassword: logPassword
         });
-        if (response.data === 'Login successful') {
+        if (response.data.status === 'Login successful') {
+          localStorage.setItem("token", response.data.data.access_token);
+          localStorage.setItem("user", JSON.stringify(response.data.data.user));
+
           navigate('/home', { state: { id: logUsername } });
         } else if (response.data === 'error') {
           alert("User has not signed up");

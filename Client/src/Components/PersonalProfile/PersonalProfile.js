@@ -6,20 +6,23 @@ import NavPersonalProfile from "./NavPersonalProfile/NavPersonalProfile";
 import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 import PersonalProfilePost from "./PersonalProfilePost/PersonalProfilePost"
 import axios from "axios";
-import { useParams } from 'react-router-dom';
-
+import getTokenConfig from '../../Utils/TokenUtils';
 
 const PersonalProfile = () => {
     const [userData, setUserData] = useState(null);
     const [countries, setCountries] = useState([]);
-    const { userId } = useParams();
+    const user = JSON.parse(localStorage.getItem("user"));
+    const userId = user._id;
 
     useEffect(() => {
         const fetchUserProfile = async () => {
             try {
-                console.log("userId:",userId);
-                const response = await axios.get(`http://localhost:3003/api/users/${userId}`);
+                const config = getTokenConfig();
+        	    if (!config) return;
+                const response = await axios.get(`http://localhost:3003/api/users/${userId}`, config);
+                console.log("User profile data:", response.data);
                 setUserData(response.data);
+                        
             } catch (error) {
                 console.error("Error fetching posts:", error);
             }
@@ -28,15 +31,16 @@ const PersonalProfile = () => {
 
         const fetchCountries = async () => {
             try {
-                const response = await axios.get(`http://localhost:3003/api/users/${userId}/countries`);
-                console.log(response.data)
-                console.log(response.data.data)
+                const config = getTokenConfig();
+        	    if (!config) return;
+                const response = await axios.get(`http://localhost:3003/api/users/${userId}/countries`, config);
                 setCountries(response.data.data);
             } catch (error) {
                 console.error("Error fetching countries data:", error);
             }
         };
         fetchCountries();
+
     }, [userId]);
     return (
         <div className="PersonalProfile">

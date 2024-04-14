@@ -4,7 +4,14 @@ import "./CountryPost.css";
 
 import { MoreHoriz, ChatBubbleOutline, FavoriteBorderOutlined, LocationOnOutlined} from "@mui/icons-material";
 
-const CountryPost = () => {
+const CountryPost = ( {postData} ) => {
+    console.log("postData", postData)
+    if (!postData) {
+        console.error("postData is undefined");
+        return null;
+    }
+    const { handle, username, country, title, content } = postData;
+
     return (
     <div className="post">
         <Avatar 
@@ -13,24 +20,22 @@ const CountryPost = () => {
         <div className="post__content">
             <div className="post__header">
                 <div className="post__names">
-                    <h3>John Doe</h3>
-                    <h4>@johndoe</h4>
+                    <h3>{username}</h3>
+                    <h4>@{handle}</h4>
                 </div>
                 <MoreHoriz className="post__options" />
             </div>
             <div className="post__country__title">
                 <div className="post__country">
                     <LocationOnOutlined className="post__country__icon" />
-                    <div><span>Country name</span></div>
+                    <div><span>{country}</span></div>
                 </div>
                 <div className="post__title">
-                    <span>Title</span>
+                    <span>{title}</span>
                 </div>
             </div>
             <div className="post__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-                ipsem sed fugit non balanditiis quam earum doloremque quibusdam totam
-                maxime!
+                {content}
             </div>
             <div className="post__media">
                 <img src="https://media.istockphoto.com/id/1436430810/photo/paris-eiffel-tower.webp?b=1&s=170667a&w=0&k=20&c=Qm33k45p4AGKtbNcqkx5hhfP7IRo8RYIpW_VdgE2bDU=" alt="" />
