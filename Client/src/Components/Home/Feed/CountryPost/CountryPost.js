@@ -1,14 +1,17 @@
 import { Avatar } from "@mui/material";
 import React from "react";
-import "./Post.css";
+import "./CountryPost.css";
 
 import { MoreHoriz, ChatBubbleOutline, FavoriteBorderOutlined, LocationOnOutlined} from "@mui/icons-material";
 
-const Post = ({ username, handle, content, imageUrl }) => {
-    const handleClick = () => {
-        console.log('Notification sent!');
-      };
-    
+const CountryPost = ( {postData} ) => {
+    console.log("postData", postData)
+    if (!postData) {
+        console.error("postData is undefined");
+        return null;
+    }
+    const { handle, username, country, title, content } = postData;
+
     return (
     <div className="post">
         <Avatar 
@@ -22,30 +25,28 @@ const Post = ({ username, handle, content, imageUrl }) => {
                 </div>
                 <MoreHoriz className="post__options" />
             </div>
-            
             <div className="post__country__title">
                 <div className="post__country">
                     <LocationOnOutlined className="post__country__icon" />
-                    <div><span>Country name</span></div>
+                    <div><span>{country}</span></div>
                 </div>
                 <div className="post__title">
-                    <span>Title</span>
+                    <span>{title}</span>
                 </div>
             </div>
             <div className="post__description">
                 {content}
             </div>
             <div className="post__media">
-                <img src={imageUrl} alt="" />
+                <img src="https://media.istockphoto.com/id/1436430810/photo/paris-eiffel-tower.webp?b=1&s=170667a&w=0&k=20&c=Qm33k45p4AGKtbNcqkx5hhfP7IRo8RYIpW_VdgE2bDU=" alt="" />
             </div>
-            
             <div className="post__footer">
-                <ChatBubbleOutline onClick={handleClick} className="post-btn" fontSize="small" />
-                <FavoriteBorderOutlined onClick={handleClick} className="post-btn" fontSize="small" />
+                <ChatBubbleOutline fontSize="small" />
+                <FavoriteBorderOutlined fontSize="small" />
             </div>
         </div>
     </div>
     );
 };
 
-export default Post;
+export default CountryPost;

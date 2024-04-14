@@ -1,0 +1,80 @@
+.people{
+    display:flex;
+    
+}
+.countryName1 label{
+  
+        width: 90%; 
+        height: 30px; 
+        font-size: 16px; 
+        padding: 5px; 
+        margin-top: 10px;
+        text-align: center;
+        background-color: rgb(232, 188, 155);
+        border-color: rgb(249, 99, 45);
+        display:block;
+        margin-left: 5%;
+        border-radius: 33px ; 
+        
+}
+.title1 label{
+    width: 90%; 
+    height: 30px; 
+    font-size: 16px; 
+    padding: 4.5px; 
+    margin-top: 20px;
+    text-align: center;
+    background-color: rgb(53, 123, 202);
+    display:block;
+    margin-left: 5%;
+    border: 3px solid black;
+    border-radius: 33px ; 
+
+}
+.gragh1 p{
+    text-align: center;
+  
+    margin: 20px;
+    text-justify: auto;
+    
+
+}
+
+.countryImg1{
+    width: 80%; 
+    height: 300px; 
+    margin-top: 30px;
+}
+
+.border{
+    box-shadow: 0 0 10px rgba(14, 7, 7, 0.1);
+    background-color: white;
+    border-radius: 10px;
+    margin: 1px;
+}
+
+.peopleImg1{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    margin-left: 20px;
+    border: 1px solid black;
+ 
+}
+
+.peopleName1{
+    font-weight: 500;
+  
+}
+
+.peopleName1 .handel1{
+    margin-left: 0%;
+    color: grey;
+    font-weight: 500;
+    font-size: small;
+    display: flex;
+    
+    }
+      
