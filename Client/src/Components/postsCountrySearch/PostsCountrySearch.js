@@ -21,7 +21,7 @@ const PostsSearch = () => {
             </div>
       
             <div className="people">
-                <img className="peopleImg" src="/images/medieval-276019_1280.jpg" alt="costume image" />
+                <img className="peopleImg" src="/images/medieval-276019_1280.jpg" alt="costume" />
                 <span className="peopleName">luna Doe luna dou <br/>@Handel </span>
             </div>
             <div className="countryName">
@@ -42,7 +42,7 @@ const PostsSearch = () => {
                 </p>
             </div>
             <div className="img">
-            <img className="countryImg" src="/images/paris.jpg" alt="country image" />
+            <img className="countryImg" src="/images/paris.jpg" alt="country" />
             </div>
         </div>
     </div>

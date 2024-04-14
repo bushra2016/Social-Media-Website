@@ -69,14 +69,13 @@ const get_all_posts =  (async (req, res, next) => {
             };
             posts_data.push(post_data);
         }
-        console.log(posts_data);
-        res.status(200).json({ status: 'SUCCESS', posts: posts_data });        
+        res.status(200).json({ status: 'SUCCESS', data: posts_data });        
     } catch (error) {
         next(error);
     }
 });
 
-const get_post = (async (req, res, next) =>{
+const get_post = (async (req, res, next) => {
     try {
         const {userId, countryId, postId} = req.params;
         if (!userId || !mongoose.Types.ObjectId.isValid(userId)) {

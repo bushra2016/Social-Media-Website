@@ -24,20 +24,20 @@ router.route('/logout')
  
 router.route('/api/users/:userId')
         .get(verfiy_token, users_controller.get_profile)
-        .put(users_controller.edit_profile)
-        .delete(users_controller.delete_profile)
+        .put(verfiy_token, users_controller.edit_profile)
+        .delete(verfiy_token, users_controller.delete_profile)
         
 router.route('/api/users/:userId/follow')
-        .post(users_controller.follow)
+        .post(verfiy_token, users_controller.follow)
 
 router.route('/api/users/:userId/unfollow')
-        .delete(users_controller.unfollow)
+        .delete(verfiy_token, users_controller.unfollow)
  
 router.route('/api/users/:userId/following')
-        .get(users_controller.get_following)
+        .get(verfiy_token, users_controller.get_following)
 
 router.route('/api/users/:userId/followers')
-        .get(users_controller.get_followers)
+        .get(verfiy_token, users_controller.get_followers)
 
 module.exports = router;
 
