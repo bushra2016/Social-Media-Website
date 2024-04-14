@@ -1,7 +1,7 @@
 
 .people{
     display:flex;
-    
+
 }
 
 .countryName label{
@@ -49,3 +49,13 @@
 .Select{
     background-color: var(--trekkers-primary) ;
 }
+ 
+
+.searchBar{
+   
+}
+
+.widgetsSearch{
+    
+}
+

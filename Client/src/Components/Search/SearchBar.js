@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./searchBar.css";
 import Sidebar from "../Sidebar/Sidebar";
+import Widgets from "../Home/Widgets/Widgets";
 
 const SearchPage = () => {
     const [selectedOption, setSelectedOption] = useState("");
@@ -34,7 +35,11 @@ const SearchPage = () => {
                     </select>
                 </div>
             </div>
+            
+            <Widgets/>
+        
         </div>
+        
     );
 };
 
