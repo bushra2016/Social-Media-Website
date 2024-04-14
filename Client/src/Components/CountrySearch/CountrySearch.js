@@ -33,29 +33,58 @@ const PostsSearch = () => {
                         <option value="Posts">Posts</option>
                     </select>
                 </div>
+                <div className="border">
+                    <div className="people">
+                        <img className="peopleImg2" src="/images/medieval-276019_1280.jpg" alt="costume image" />
+                        <span className="peopleName2">Friend name <br /><span className="handel2">@Handel</span> </span>
+                    </div>
+                    <div className="countryName2">
+                        <label>Country name</label>
+                    </div>
+                    <div className="title2">
+                        <label>Title</label>
+                    </div>
+                    <div className="gragh2">
+                        <p>
+                            Paris, often dubbed the "City of Light," exudes an unparalleled charm that captivates
+                            millions of visitors every year. Nestled along the banks of the Seine
+                            River in northern France, Paris stands as a timeless symbol of romance, culture, and sophistication.
+                            kvnonvsp kfvnfklvndl kvndlkvndjkv ndklvn dvdflkvndk lvndklvmdf
+                            kfnvklfdnvldf vfnvknv s lkvn vfkvnov
+                            vklfnviovnv vdnvpldf vfkvndf vvdfonvdfpv pom vidfjvm vdfivm vidfifjvm djvmdf vdfovdf vfiovmdfv
+                        </p>
+                    </div>
+                    <div className="img">
+                        <img className="countryImg2" src="/images/paris.jpg" alt="country image" />
+                    </div>
+                </div>
 
-                <div className="people">
-                    <img className="peopleImg" src="/images/medieval-276019_1280.jpg" alt="costume image" />
-                    <span className="peopleName">luna Doe luna dou <br/>@Handel </span>
-                </div>
-                <div className="countryName">
-                    <label>Country name</label>
-                </div>
-                <div className="title">
-                    <label>Title</label>
-                </div>
-                <div className="gragh">
-                    <p>
-                        Paris, often dubbed the "City of Light," exudes an unparalleled charm that captivates
-                        millions of visitors every year. Nestled along the banks of the Seine
-                        River in northern France, Paris stands as a timeless symbol of romance, culture, and sophistication.
-                        kvnonvsp kfvnfklvndl kvndlkvndjkv ndklvn dvdflkvndk lvndklvmdf
-                        kfnvklfdnvldf vfnvknv s lkvn vfkvnov
-                        vklfnviovnv vdnvpldf vfkvndf vvdfonvdfpv pom vidfjvm vdfivm vidfifjvm djvmdf vdfovdf vfiovmdfv
-                    </p>
-                </div>
-                <div className="img">
-                    <img className="countryImg" src="/images/paris.jpg" alt="country image" />
+
+
+                <div className="border">
+                    <div className="people">
+                        <img className="peopleImg2" src="/images/medieval-276019_1280.jpg" alt="costume image" />
+                        <span className="peopleName2">Friend name <br /><span className="handel2">@Handel</span> </span>
+                    </div>
+                    <div className="countryName2">
+                        <label>Country name</label>
+                    </div>
+                    <div className="title2">
+                        <label>Title</label>
+                    </div>
+                    <div className="gragh2">
+                        <p>
+                            Paris, often dubbed the "City of Light," exudes an unparalleled charm that captivates
+                            millions of visitors every year. Nestled along the banks of the Seine
+                            River in northern France, Paris stands as a timeless symbol of romance, culture, and sophistication.
+                            kvnonvsp kfvnfklvndl kvndlkvndjkv ndklvn dvdflkvndk lvndklvmdf
+                            kfnvklfdnvldf vfnvknv s lkvn vfkvnov
+                            vklfnviovnv vdnvpldf vfkvndf vvdfonvdfpv pom vidfjvm vdfivm vidfifjvm djvmdf vdfovdf vfiovmdfv
+                        </p>
+                    </div>
+                    <div className="img">
+                        <img className="countryImg2" src="/images/paris.jpg" alt="country image" />
+                    </div>
                 </div>
             </div>
         </div>

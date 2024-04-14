@@ -1,15 +1,11 @@
 .people{
-    margin-top: 100px;
+    margin-top: 10px;
      align-items: center;
      padding: 10px;
      display:inline-flex;
-     border-radius: 10%;
-     box-shadow: 0 0 10px rgba(14, 7, 7, 0.1);
+     margin-bottom: 3px;
+    
      
- }
- 
- .people:hover{
-     background-color: #e6ecf0;
  }
  
  .peopleImg{
@@ -18,11 +14,14 @@
      border-radius: 50%;
      object-fit: cover;
      margin-right: 10px;
+     margin-left: 20px;
+     border: 1px solid black;
+  
  }
  
  .peopleName{
      font-weight: 500;
-     margin-right: auto;
+   
  }
 
  .people button{
@@ -34,7 +33,8 @@
   padding: 15px;
   font-size: 1.1rem !important;
   border: none !important;
-  margin-left: 70px;
+  margin-right: 0px;
+  margin-left: 180px;
   cursor: pointer;
  }
 
@@ -68,7 +68,7 @@
    .search-form {
      display: flex;
      justify-content: center;
-     margin-bottom: 20px;
+     margin-bottom: 80px;
    }
    
    .search-form input[type="text"] {
@@ -112,4 +112,12 @@
     display: flex;
 
    }
+   .peopleName .handel{
+    margin-left: 0%;
+    color: grey;
+    font-weight: 500;
+    font-size: small;
+    display: flex;
+    
+}
    
