@@ -20,9 +20,9 @@ const SearchPage = () => {
 
     return (
         <div className="searchBar">
-            <div className="sidebar">
+          
                 <Sidebar />
-            </div>
+         
             <div className="container">
                 <h2>Search Page</h2>
                 <div className="search-form">

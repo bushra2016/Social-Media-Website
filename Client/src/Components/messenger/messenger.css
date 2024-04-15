@@ -8,16 +8,23 @@ margin-top: 30px;
 }
 
 .chatMenuInput{
-    width: 90%;
+    width: 80%;
     padding: 10px 0 ;
     border: none;
     border-bottom: 1px solid  gray;
     background-color: rgb(238, 235, 235);
+    margin-left: 20px;
+    margin-bottom: 40px;
    
    
 }
 .chatBox{
-    flex: 5.5;
+    flex: 0.5;
+    width: 100%;
+   
+   
+    border-left: 1px solid var(--trekkers-secondary);
+    border-right: 1px solid var(--trekkers-secondary);
 }
 
 .chatBoxWrappar{
@@ -62,9 +69,7 @@ margin-top: 30px;
     flex: 5.5;
 }
 
-.chatMenuWrapper,.chatBoxWrapper,.chatOnlineWrapper{
-    padding: 10px;
-    background-color: blue;
-    height: 100%;
-
+.chatMenuWrappar{
+    flex: 0.3;
+    height: 100vh;
 }
