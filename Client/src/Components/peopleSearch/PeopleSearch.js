@@ -34,7 +34,7 @@ const SearchPage = () => {
                         <option value="Posts">Posts</option>
                     </select>
                 </div>
-                <div className="border">
+                <div className="border0">
                     <div className="people">
                         <img className="peopleImg" src="/images/medieval-276019_1280.jpg" alt="costume image" />
                         <span className="peopleName">Friend name <br /><span className="handel">@Handel</span> </span>
@@ -43,14 +43,14 @@ const SearchPage = () => {
 
                     </div>
                 </div>
-                <div className="border">
+                <div className="border0">
                     <div className="people">
                         <img className="peopleImg" src="/images/medieval-276019_1280.jpg" alt="costume image" />
                         <span className="peopleName">Friend name <br /><span className="handel">@Handel</span> </span>
                         <button> follow</button>
                     </div>
                 </div>
-                <div className="border">
+                <div className="border0">
                     <div className="people">
                         <img className="peopleImg" src="/images/medieval-276019_1280.jpg" alt="costume image" />
                         <span className="peopleName">Friend name <br /><span className="handel">@Handel</span> </span>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./postSearch.css";
 import Sidebar from "../Sidebar/Sidebar";
+import Widgets from "../Home/Widgets/Widgets";
 
 const PostsSearch = () => {
     const [selectedOption, setSelectedOption] = useState("");
@@ -92,6 +93,7 @@ const PostsSearch = () => {
 
                 </div>
             </div>
+            <Widgets/>
         </div>
     );
 };

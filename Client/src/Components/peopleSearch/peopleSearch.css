@@ -3,7 +3,6 @@
      align-items: center;
      padding: 10px;
      display:inline-flex;
-     box-shadow: 0 0 10px rgba(14, 7, 7, 0.1);    
  }
  
  .peopleImg{
@@ -41,15 +40,11 @@
  
  /********/
  .container {
-     max-width: 600px;
-     padding: 20px;
-     background-color: var(--grey-1);
-     box-shadow: 0 0 10px rgb(247, 244, 244);
-     text-align: center; 
-     float:inherit;
-     width: 100%; 
-     margin-right: 600;
-     flex: 0.5;
+  flex: 0.5;
+  width: 100%;
+  border-left: 1px solid var(--trekkers-secondary);
+  border-right: 1px solid var(--trekkers-secondary);
+  text-align: center;
  }
    
    h2 {
@@ -112,4 +107,22 @@
     display: flex;
     
 }
+
+.border0 {
+  border-radius: 10px;
+  padding: 0; /* قمت بإلغاء ال padding */
+  margin-bottom: 3px; /* إضافة التباعد السفلي بمقدار 3px */
+  text-align: center; /* لتوسيط العناصر داخل الحاوية */
+  margin-left: 60px;
+  margin-right: 60px;
+  box-shadow: 0 0 10px rgba(14, 7, 7, 0.1);    
+
+}
+
+.border0:hover{
+  background-color:  rgb(231, 231, 231);
+}
+
+
+
    
