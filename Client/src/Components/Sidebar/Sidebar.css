@@ -3,9 +3,9 @@
     flex: 0.2;
     padding: 1rem 2rem;
 
-    /* استخدم position: sticky; لتثبيت الشريط الجانبي */
+   
     position: sticky;
-    top: 0; /* تثبيت الشريط الجانبي في الأعلى من النافذة */
+    top: 0; 
 }
 
 

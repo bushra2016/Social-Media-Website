@@ -12,7 +12,7 @@ const PersonalProfile = () => {
     const [userData, setUserData] = useState(null);
     const [countries, setCountries] = useState([]);
     const user = JSON.parse(localStorage.getItem("user"));
-    const userId = "123";{/*حذف */}
+    const userId = user._Id;
 
     useEffect(() => {
         const fetchUserProfile = async () => {
@@ -57,7 +57,7 @@ const PersonalProfile = () => {
 					</div>
                 </div>
                 <div className="PersonalProfile__country__container">
-                <PersonalProfilePost/>   {/*حذف */}
+                
                     {countries.map(country => (
                         <PersonalProfilePost key={country._id} country={country} />
                     ))}
