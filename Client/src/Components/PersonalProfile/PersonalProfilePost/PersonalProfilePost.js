@@ -64,6 +64,7 @@ const PersonalProfilePost = (country) => {
                     <img src="https://media.istockphoto.com/id/1436430810/photo/paris-eiffel-tower.webp?b=1&s=170667a&w=0&k=20&c=Qm33k45p4AGKtbNcqkx5hhfP7IRo8RYIpW_VdgE2bDU=" alt="" />
                     {/*<img src='country?.country?.photo' alt="" />*/}
                 </div>
+
             </div>
         </div>
     );

@@ -56,8 +56,8 @@ const PersonalProfile = () => {
 						<span>Add country</span>
 					</div>
                 </div>
-                <div className="PersonalProfile__country__container">
-                
+
+                <div className="PersonalProfile__country__container">        
                     {countries.map(country => (
                         <PersonalProfilePost key={country._id} country={country} />
                     ))}
